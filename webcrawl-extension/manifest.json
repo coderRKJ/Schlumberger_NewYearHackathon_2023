@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "WebCrawl Extension",
+    "description": "Extension for Crawling and Retrieving Article URLs.",
+    "version": "1.0",
+    "action": {
+        "default_icon": {
+          "16": "images/icon-16.png",
+          "32": "images/icon-32.png"
+        },    
+        "default_title": "Click to Send URLs",
+        "default_popup": "popup/popup.html"
+    },
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "https://electrical-engineering-portal.com/*"
+            ]
+        }
+    ]
+}
